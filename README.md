@@ -1,6 +1,6 @@
 # InkBasicModels
 
-[![](https://jitpack.io/v/irontec/InkBasicModels.svg)](https://jitpack.io/#irontec/InkBasicModels)
+[![](https://jitpack.io/v/inlacou/InkBasicModels.svg)](https://jitpack.io/#inlacou/InkBasicModels)
 
 ## Usage
 
