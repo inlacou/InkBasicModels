@@ -1,13 +1,12 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+
 android {
-    compileSdkVersion 29
-
-
+    namespace = "com.inlacou.inkbasicmodels"
+    compileSdkVersion 34
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 29
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
 
@@ -27,13 +26,14 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.core:core-ktx:1.10.1'
+    compileOnly 'com.google.android.material:material:1.11.0'
 
-    compileOnly 'com.github.irontec:InkSpannable:1.2.0'
-    compileOnly 'com.github.inlacou:PRipple:1.2.0'
-    compileOnly 'com.google.android.material:material:1.1.0-alpha10'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    compileOnly 'com.github.irontec:InkSpannable:1.2.0' //TODO move to a new module, this one should be only for Kotlin and Android types
+    compileOnly 'com.github.inlacou:PRipple:1.6.3' //TODO move to a new module, this one should be only for Kotlin and Android types
 }

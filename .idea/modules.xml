@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/InkBasicModelsLibraryProject.iml" filepath="$PROJECT_DIR$/InkBasicModelsLibraryProject.iml" group="InkBasicModelsLibraryProject" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="InkBasicModelsLibraryProject/app" />
-      <module fileurl="file://$PROJECT_DIR$/inkbasicmodels/inkbasicmodels.iml" filepath="$PROJECT_DIR$/inkbasicmodels/inkbasicmodels.iml" group="InkBasicModelsLibraryProject/inkbasicmodels" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/InkBasicModelsLibraryProject.iml" filepath="$PROJECT_DIR$/.idea/modules/InkBasicModelsLibraryProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/InkBasicModelsLibraryProject.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/InkBasicModelsLibraryProject.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/InkBasicModelsLibraryProject.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/InkBasicModelsLibraryProject.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/InkBasicModelsLibraryProject.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/InkBasicModelsLibraryProject.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/InkBasicModelsLibraryProject.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/InkBasicModelsLibraryProject.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/inkbasicmodels/InkBasicModelsLibraryProject.inkbasicmodels.iml" filepath="$PROJECT_DIR$/.idea/modules/inkbasicmodels/InkBasicModelsLibraryProject.inkbasicmodels.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/inkbasicmodels/InkBasicModelsLibraryProject.inkbasicmodels.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/inkbasicmodels/InkBasicModelsLibraryProject.inkbasicmodels.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/inkbasicmodels/InkBasicModelsLibraryProject.inkbasicmodels.main.iml" filepath="$PROJECT_DIR$/.idea/modules/inkbasicmodels/InkBasicModelsLibraryProject.inkbasicmodels.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/inkbasicmodels/InkBasicModelsLibraryProject.inkbasicmodels.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/inkbasicmodels/InkBasicModelsLibraryProject.inkbasicmodels.unitTest.iml" />
     </modules>
   </component>
 </project>
