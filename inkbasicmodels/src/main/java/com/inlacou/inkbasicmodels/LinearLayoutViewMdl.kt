@@ -13,19 +13,3 @@ open class LinearLayoutViewMdl(
 	 */
 	val gravity: Int? = null,
 )
-
-fun LinearLayout.applyViewModel(mdl: LinearLayoutViewMdl) {
-	(this as View).applyModel(mdl.generalViewMdl)
-	layoutParams = layoutParams.apply {
-		mdl.gravity?.let {
-			if(this is LinearLayout.LayoutParams) gravity = it
-		}
-	}
-}
-
-fun LinearLayout.applyModelOrClear(mdl: LinearLayoutViewMdl?) {
-	(this as View).applyModelOrClear(mdl?.generalViewMdl)
-	layoutParams = layoutParams.apply {
-		if(this is LinearLayout.LayoutParams) gravity = mdl?.gravity ?: Gravity.NO_GRAVITY
-	}
-}
