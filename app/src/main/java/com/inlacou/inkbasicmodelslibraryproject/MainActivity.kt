@@ -55,8 +55,8 @@ class MainActivity : AppCompatActivity() {
 						marginTop = 16.dpToPx()
 				),
 				rippleViewMdl = RippleMdl(
-						normalColorResId = R.color.colorPrimary,
-						rippleColorResId = R.color.colorPrimaryDark,
+						normalBackgroundColorResId = R.color.colorPrimary,
+						rippleBackgroundColorResId = R.color.colorPrimaryDark,
 						cornerRadius = 16f,
 						strokeWidth = 1.dpToPx(),
 						strokeColorResId = R.color.colorAccent

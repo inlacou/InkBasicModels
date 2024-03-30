@@ -24,8 +24,8 @@ fun RippleButton.applyModel(mdl: RippleButtonViewMdl?) {
 }
 
 fun RippleButton.applyModel(generalViewMdl: GeneralViewMdl?, textMdl: TextMdl?, rippleMdl: RippleMdl?) {
-	if(rippleMdl?.normalColorResId!=null) normalColor = context.getColorCompat(rippleMdl.normalColorResId)
-	if(rippleMdl?.rippleColorResId!=null) rippleColor = context.getColorCompat(rippleMdl.rippleColorResId)
+	if(rippleMdl?.normalBackgroundColorResId!=null) normalBackgroundColor = context.getColorCompat(rippleMdl.normalBackgroundColorResId)
+	if(rippleMdl?.rippleBackgroundColorResId!=null) rippleBackgroundColor = context.getColorCompat(rippleMdl.rippleBackgroundColorResId)
 	if(rippleMdl?.strokeColorResId!=null) strokeColor = context.getColorCompat(rippleMdl.strokeColorResId)
 	if(rippleMdl?.strokeWidth!=null) strokeWidth = rippleMdl.strokeWidth
 	if(rippleMdl?.cornerRadius!=null) corners = rippleMdl.cornerRadius
@@ -96,32 +96,32 @@ fun RippleRelativeLayout.applyModelOrClear(mdl: RippleViewMdl?) {
 }
 
 fun RippleRelativeLayout.applyModel(mdl: RippleMdl?){
-	if(mdl?.normalColorResId!=null) normalColor = context.getColorCompat(mdl.normalColorResId)
-	if(mdl?.rippleColorResId!=null) rippleColor = context.getColorCompat(mdl.rippleColorResId)
+	if(mdl?.normalBackgroundColorResId!=null) normalBackgroundColor = context.getColorCompat(mdl.normalBackgroundColorResId)
+	if(mdl?.rippleBackgroundColorResId!=null) rippleBackgroundColor = context.getColorCompat(mdl.rippleBackgroundColorResId)
 	if(mdl?.strokeWidth!=null) strokeWidth = mdl.strokeWidth
 	if(mdl?.strokeColorResId!=null) strokeColor = context.getColorCompat(mdl.strokeColorResId)
 	if(mdl?.cornerRadius!=null) corners = mdl.cornerRadius
 }
 
 fun RippleRelativeLayout.applyModelOrClear(mdl: RippleMdl?){
-	normalColor = context.getColorCompat(mdl?.normalColorResId ?: R.color.inkbasicmodels_default_background_color)
-	rippleColor = context.getColorCompat(mdl?.rippleColorResId ?: R.color.inkbasicmodels_default_background_ripple_color)
+	normalBackgroundColor = context.getColorCompat(mdl?.normalBackgroundColorResId ?: R.color.inkbasicmodels_default_background_color)
+	rippleBackgroundColor = context.getColorCompat(mdl?.rippleBackgroundColorResId ?: R.color.inkbasicmodels_default_background_ripple_color)
 	strokeWidth = mdl?.strokeWidth ?: 0
 	strokeColor = context.getColorCompat(mdl?.strokeColorResId ?: R.color.inkbasicmodels_default_text_color)
 	corners = mdl?.cornerRadius ?: 15F
 }
 
 fun RippleLinearLayout.applyModel(mdl: RippleMdl?){
-	if(mdl?.normalColorResId!=null) normalColor = context.getColorCompat(mdl.normalColorResId)
-	if(mdl?.rippleColorResId!=null) rippleColor = context.getColorCompat(mdl.rippleColorResId)
+	if(mdl?.normalBackgroundColorResId!=null) normalBackgroundColor = context.getColorCompat(mdl.normalBackgroundColorResId)
+	if(mdl?.rippleBackgroundColorResId!=null) rippleBackgroundColor = context.getColorCompat(mdl.rippleBackgroundColorResId)
 	if(mdl?.strokeWidth!=null) strokeWidth = mdl.strokeWidth
 	if(mdl?.strokeColorResId!=null) strokeColor = context.getColorCompat(mdl.strokeColorResId)
 	if(mdl?.cornerRadius!=null) corners = mdl.cornerRadius
 }
 
 fun RippleLinearLayout.applyModelOrClear(mdl: RippleMdl?){
-	normalColor = context.getColorCompat(mdl?.normalColorResId ?: R.color.inkbasicmodels_default_background_color)
-	rippleColor = context.getColorCompat(mdl?.rippleColorResId ?: R.color.inkbasicmodels_default_background_ripple_color)
+	normalBackgroundColor = context.getColorCompat(mdl?.normalBackgroundColorResId ?: R.color.inkbasicmodels_default_background_color)
+	rippleBackgroundColor = context.getColorCompat(mdl?.rippleBackgroundColorResId ?: R.color.inkbasicmodels_default_background_ripple_color)
 	strokeWidth = mdl?.strokeWidth ?: 0
 	strokeColor = context.getColorCompat(mdl?.strokeColorResId ?: R.color.inkbasicmodels_default_text_color)
 	corners = mdl?.cornerRadius ?: 15F
