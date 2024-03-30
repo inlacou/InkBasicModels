@@ -136,13 +136,69 @@ fun View.applyModel(mdl: GeneralViewMdl?) {
 	layoutParams = layoutParams?.apply {
 		mdl?.width?.let { width = it }
 		mdl?.height?.let { height = it }
-		mdl?.gravity?.let {
+	}
+}
+
+fun RelativeLayout.applyViewModel(mdl: RelativeLayoutViewMdl) {
+	(this as View).applyModel(mdl.generalViewMdl)
+	layoutParams = layoutParams.apply {
+		mdl.rules?.let { if(this is RelativeLayout.LayoutParams) it.forEach { addRule(it) } }
+	}
+}
+
+fun RelativeLayout.applyModelOrClear(mdl: RelativeLayoutViewMdl?) {
+	(this as View).applyModelOrClear(mdl?.generalViewMdl)
+	layoutParams = layoutParams.apply {
+		if(this is RelativeLayout.LayoutParams) mdl?.rules?.forEach { addRule(it) } ?: addRule(if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.JELLY_BEAN_MR1) RelativeLayout.ALIGN_START else RelativeLayout.ALIGN_LEFT)
+	}
+}
+
+fun LinearLayout.applyViewModel(mdl: LinearLayoutViewMdl) {
+	(this as View).applyModel(mdl.generalViewMdl)
+	layoutParams = layoutParams.apply {
+		mdl.gravity?.let {
 			if(this is LinearLayout.LayoutParams) gravity = it
+		}
+	}
+}
+
+fun LinearLayout.applyModelOrClear(mdl: LinearLayoutViewMdl?) {
+	(this as View).applyModelOrClear(mdl?.generalViewMdl)
+	layoutParams = layoutParams.apply {
+		if(this is LinearLayout.LayoutParams) gravity = mdl?.gravity ?: Gravity.NO_GRAVITY
+	}
+}
+
+fun FrameLayout.applyViewModel(mdl: LinearLayoutViewMdl) {
+	(this as View).applyModel(mdl.generalViewMdl)
+	layoutParams = layoutParams.apply {
+		mdl.gravity?.let {
 			if(this is FrameLayout.LayoutParams) gravity = it
+		}
+	}
+}
+
+fun FrameLayout.applyModelOrClear(mdl: LinearLayoutViewMdl?) {
+	(this as View).applyModelOrClear(mdl?.generalViewMdl)
+	layoutParams = layoutParams.apply {
+		if(this is FrameLayout.LayoutParams) gravity = mdl?.gravity ?: Gravity.NO_GRAVITY
+	}
+}
+
+fun CoordinatorLayout.applyViewModel(mdl: LinearLayoutViewMdl) {
+	(this as View).applyModel(mdl.generalViewMdl)
+	layoutParams = layoutParams.apply {
+		mdl.gravity?.let {
 			if(this is CoordinatorLayout.LayoutParams) gravity = it
 			try{ if(this is CoordinatorLayout.LayoutParams) gravity = it }catch (ncdfe: NoClassDefFoundError){}
 		}
-		mdl?.rules?.let { if(this is RelativeLayout.LayoutParams) it.forEach { addRule(it) } }
+	}
+}
+fun CoordinatorLayout.applyModelOrClear(mdl: LinearLayoutViewMdl?) {
+	(this as View).applyModelOrClear(mdl?.generalViewMdl)
+	layoutParams = layoutParams.apply {
+		if(this is CoordinatorLayout.LayoutParams) gravity = mdl?.gravity ?: Gravity.NO_GRAVITY
+		try{ if(this is CoordinatorLayout.LayoutParams) gravity = mdl?.gravity ?: Gravity.NO_GRAVITY }catch (ncdfe: NoClassDefFoundError){}
 	}
 }
 
@@ -154,10 +210,6 @@ fun View.applyModelOrClear(mdl: GeneralViewMdl?) {
 	layoutParams = layoutParams?.apply {
 		width = mdl?.width ?: ViewGroup.LayoutParams.WRAP_CONTENT
 		height = mdl?.height ?: ViewGroup.LayoutParams.WRAP_CONTENT
-		if(this is LinearLayout.LayoutParams) gravity = mdl?.gravity ?: Gravity.NO_GRAVITY
-		if(this is FrameLayout.LayoutParams) gravity = mdl?.gravity ?: Gravity.NO_GRAVITY
-		if(this is RelativeLayout.LayoutParams) mdl?.rules?.forEach { addRule(it) } ?: addRule(if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.JELLY_BEAN_MR1) RelativeLayout.ALIGN_START else RelativeLayout.ALIGN_LEFT)
-		try{ if(this is CoordinatorLayout.LayoutParams) gravity = mdl?.gravity ?: Gravity.NO_GRAVITY }catch (ncdfe: NoClassDefFoundError){}
 	}
 }
 
