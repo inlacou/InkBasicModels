@@ -40,15 +40,19 @@ fun TextView.applyModelOrClear(model: TextViewMdl?) {
 }
 
 fun TextView.applyModelOrClear(textMdl: TextMdl?) {
-	setLinkTextColor(context.getColorCompat(textMdl?.textColorResId ?: R.color.inkbasicmodels_default_text_color))
-	setTextColor(context.getColorCompat(textMdl?.textColorResId ?: R.color.inkbasicmodels_default_text_color))
-	when(textMdl?.textSizeDimensionType) {
-		PX -> setTextSize(TypedValue.COMPLEX_UNIT_PX, textMdl.textSize ?: 16F)
-		DP -> setTextSize(TypedValue.COMPLEX_UNIT_DIP, textMdl.textSize ?: 16F)
-		SP -> setTextSize(TypedValue.COMPLEX_UNIT_SP, textMdl.textSize ?: 16F)
+	applyModelOrClear(textMdl?.textStyleMdl)
+	text = textMdl?.text?.build() ?: ""
+}
+
+fun TextView.applyModelOrClear(textStyleMdl: TextStyleMdl?) {
+	setLinkTextColor(context.getColorCompat(textStyleMdl?.textColorResId ?: R.color.inkbasicmodels_default_text_color))
+	setTextColor(context.getColorCompat(textStyleMdl?.textColorResId ?: R.color.inkbasicmodels_default_text_color))
+	when(textStyleMdl?.textSizeDimensionType) {
+		PX -> setTextSize(TypedValue.COMPLEX_UNIT_PX, textStyleMdl.textSize ?: 16F)
+		DP -> setTextSize(TypedValue.COMPLEX_UNIT_DIP, textStyleMdl.textSize ?: 16F)
+		SP -> setTextSize(TypedValue.COMPLEX_UNIT_SP, textStyleMdl.textSize ?: 16F)
 		null -> setTextSize(TypedValue.COMPLEX_UNIT_SP, 16F)
 	}
-	text = textMdl?.text?.build() ?: ""
 }
 
 fun TextView.applyModel(model: TextViewMdl?){
@@ -57,15 +61,18 @@ fun TextView.applyModel(model: TextViewMdl?){
 }
 
 fun TextView.applyModel(textMdl: TextMdl?) {
-	if(textMdl?.textColorResId!=null) setLinkTextColor(context.getColorCompat(textMdl.textColorResId))
-	if(textMdl?.textColorResId!=null) setTextColor(context.getColorCompat(textMdl.textColorResId))
-	if(textMdl?.textSize!=null) when(textMdl?.textSizeDimensionType) {
-		PX -> setTextSize(TypedValue.COMPLEX_UNIT_PX, textMdl.textSize ?: 16F)
-		DP -> setTextSize(TypedValue.COMPLEX_UNIT_DIP, textMdl.textSize ?: 16F)
-		SP -> setTextSize(TypedValue.COMPLEX_UNIT_SP, textMdl.textSize ?: 16F)
-		null -> setTextSize(TypedValue.COMPLEX_UNIT_SP, 16F)
-	}
+	applyModel(textMdl?.textStyleMdl)
 	if(textMdl?.text!=null) text = textMdl.text.build()
+}
+
+fun TextView.applyModel(textStyleMdl: TextStyleMdl?) {
+	if(textStyleMdl?.textColorResId!=null) setLinkTextColor(context.getColorCompat(textStyleMdl.textColorResId))
+	if(textStyleMdl?.textColorResId!=null) setTextColor(context.getColorCompat(textStyleMdl.textColorResId))
+	if(textStyleMdl?.textSize!=null) when(textStyleMdl.textSizeDimensionType) {
+		PX -> setTextSize(TypedValue.COMPLEX_UNIT_PX, textStyleMdl.textSize)
+		DP -> setTextSize(TypedValue.COMPLEX_UNIT_DIP, textStyleMdl.textSize)
+		SP -> setTextSize(TypedValue.COMPLEX_UNIT_SP, textStyleMdl.textSize)
+	}
 }
 
 fun TextView.applyModel(generalViewMdl: GeneralViewMdl?, textMdl: TextMdl?) {
