@@ -1,5 +1,7 @@
 package com.inlacou.inkbasicmodels
 
-enum class DimensionType {
-	PX, DP, SP
+import android.util.TypedValue
+
+enum class DimensionType(val value: Int) {
+	PX(TypedValue.COMPLEX_UNIT_PX), DP(TypedValue.COMPLEX_UNIT_DIP), SP(TypedValue.COMPLEX_UNIT_SP)
 }
